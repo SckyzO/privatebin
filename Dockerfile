@@ -11,7 +11,7 @@ RUN echo " https://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
  && apk -U upgrade && apk add $BUILD_DEPS \
  && mkdir privatebin && cd privatebin \
  && wget -qO- https://github.com/PrivateBin/PrivateBin/archive/${PRIVATEBIN_VER}.tar.gz | tar xz --strip 1 \
- && mv cfg/conf.ini.sample cfg/conf.ini \
+ && mv cfg/conf.sample.php cfg/conf.php \
  && apk del $BUILD_DEPS \
  && rm -f /var/cache/apk/*
 
